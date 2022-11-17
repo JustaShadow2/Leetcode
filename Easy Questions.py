@@ -6,7 +6,12 @@ class Solution(object):
                 if nums[i] + nums[j] == target:
                     return [i, j]
 
-print(Solution().twoSum([2, 7, 11, 15], 9)) #
+print(Solution().twoSum([2, 7, 11, 15], 9)) 
 
-
-
+class Solution(object):
+    def isPalindrome(self, x):
+        x = str(x)
+        if x == x[::-1]:
+            return True
+        
+print(Solution().isPalindrome(121))
