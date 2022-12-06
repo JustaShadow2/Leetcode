@@ -50,3 +50,18 @@ board = [
 ]
 Solution().solveSudoku(board)
 print(board)
+
+
+
+
+# Median of Two Sorted Arrays
+class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        nums1.extend(nums2)
+        nums1.sort()
+        if len(nums1)%2 == 0:
+            return (nums1[len(nums1)/2] + nums1[len(nums1)/2 - 1])/2.0
+        else:
+            return nums1[len(nums1)/2]
+
+print(Solution().findMedianSortedArrays([1, 2], [3, 4]))
