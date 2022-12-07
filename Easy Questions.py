@@ -65,9 +65,6 @@ print(Solution().removeDuplicates([1, 1, 2]))
         if 'CM' in s:
             total -= 200
         return total'''
-
-
-
 # imagine not hardcoding it, but using a dictionary instead
 class Solution(object):
     def romanToInt(self, s):
@@ -81,3 +78,26 @@ class Solution(object):
         return total
 
 print(Solution().romanToInt('MCMXCIV'))
+
+
+
+# Description: Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive). Range sum of BST
+class Solution(object):
+    def rangeSumBST(self, root, low, high):
+        """
+        :type root: TreeNode
+        :type low: int
+        :type high: int
+        :rtype: int
+        """
+        if root == None: # if root is None, then we can return 0
+            return 0
+        if root.val < low: # if root.val < low, then all the left nodes are smaller than low, so we can skip them
+            return self.rangeSumBST(root.right, low, high) 
+        if root.val > high: # if root.val > high, then all the right nodes are bigger than high, so we can skip them
+            return self.rangeSumBST(root.left, low, high)
+        return root.val + self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high) # if root.val is in the range, then we can add it to the sum and continue to search the left and right nodes
+
+
+root = [10,5,15,3,7,null,18]
+print(Solution().rangeSumBST(root, 7, 15))
