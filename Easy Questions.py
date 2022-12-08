@@ -117,7 +117,7 @@ class Solution(object):
 # Plus One
 class Solution(object):
     def plusOne(self, digits):
-        for i in range(len(digits)-1,-1,-1):
+        for i in range(len(digits)-1,-1,-1): # iterate backwards through the list
             if digits[i] == 9:
                 digits[i] = 0
             else:
