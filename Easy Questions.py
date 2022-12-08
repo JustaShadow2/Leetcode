@@ -101,3 +101,13 @@ class Solution(object):
 
 root = [10,5,15,3,7,null,18]
 print(Solution().rangeSumBST(root, 7, 15))
+
+
+
+# Merge Sorted Array
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        for i in range(n):
+            nums1[m+i] = nums2[i]
+        nums1.sort()
+        return nums1
